@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "9383969f-23cb-4a7a-934f-70d50835c70b",
+		"name": "Fleet Manager Client",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "ibrbayazit@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "123123",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/auth/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logged User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDBkYmQ1OWZjYzc1MWQwYWNhMDhhN2UiLCJvcmdhbml6YXRpb25faWQiOiI2NDBkYTA3NWI4NWM3OThmNWI5OTBkMGQiLCJuYW1lIjoiaWJyYWhpbSIsInN1cm5hbWUiOiJiYXlheml0IHVwIiwiZW1haWwiOiJpYnJiYXlheml0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHN1YWhveGhRNmVZMy5hd2dYaW5vcU9WUWExLkZPZU03VTR4OGhadmlDZ1N1bnUxd056VGRhIiwiY3JlZGl0IjoxMDAsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMTJUMTE6NTQ6MDEuMjk2WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMTJUMTQ6MjU6MTQuNzQ0WiIsIl9fdiI6MCwiaWF0IjoxNjc4NzMyMTA2LCJleHAiOjE2Nzg3MzM5MDZ9.9YT9KhgYW6mdwtuOJEOpl4mpGTZxg4YqTWSuU8tHBzY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/user",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Charge Session",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDBkYmQ1OWZjYzc1MWQwYWNhMDhhN2UiLCJvcmdhbml6YXRpb25faWQiOiI2NDBkYTA3NWI4NWM3OThmNWI5OTBkMGQiLCJuYW1lIjoiaWJyYWhpbSIsInN1cm5hbWUiOiJiYXlheml0IHVwIiwiZW1haWwiOiJpYnJiYXlheml0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHN1YWhveGhRNmVZMy5hd2dYaW5vcU9WUWExLkZPZU03VTR4OGhadmlDZ1N1bnUxd056VGRhIiwiY3JlZGl0IjoxMDAsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMTJUMTE6NTQ6MDEuMjk2WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMTJUMTQ6MjU6MTQuNzQ0WiIsIl9fdiI6MCwiaWF0IjoxNjc4NzMzOTI2LCJleHAiOjE2Nzg3MzU3MjZ9.uSb6vb4NpqWnIP_aH5p6kbWwYdyx4R3ujQo5gx8JdFA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "battery_level",
+							"value": "10",
+							"type": "default"
+						},
+						{
+							"key": "status",
+							"value": "waiting",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/charge",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"charge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Active Charge Session",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDBkYmQ1OWZjYzc1MWQwYWNhMDhhN2UiLCJvcmdhbml6YXRpb25faWQiOiI2NDBkYTA3NWI4NWM3OThmNWI5OTBkMGQiLCJuYW1lIjoiaWJyYWhpbSIsInN1cm5hbWUiOiJiYXlheml0IHVwIiwiZW1haWwiOiJpYnJiYXlheml0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHN1YWhveGhRNmVZMy5hd2dYaW5vcU9WUWExLkZPZU03VTR4OGhadmlDZ1N1bnUxd056VGRhIiwiY3JlZGl0IjoxMDAsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMTJUMTE6NTQ6MDEuMjk2WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMTJUMTQ6MjU6MTQuNzQ0WiIsIl9fdiI6MCwiaWF0IjoxNjc4NzMyMTA2LCJleHAiOjE2Nzg3MzM5MDZ9.9YT9KhgYW6mdwtuOJEOpl4mpGTZxg4YqTWSuU8tHBzY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/charge/active-session",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"charge",
+						"active-session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Done Charge Sessions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDBkYmQ1OWZjYzc1MWQwYWNhMDhhN2UiLCJvcmdhbml6YXRpb25faWQiOiI2NDBkYTA3NWI4NWM3OThmNWI5OTBkMGQiLCJuYW1lIjoiaWJyYWhpbSIsInN1cm5hbWUiOiJiYXlheml0IHVwIiwiZW1haWwiOiJpYnJiYXlheml0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHN1YWhveGhRNmVZMy5hd2dYaW5vcU9WUWExLkZPZU03VTR4OGhadmlDZ1N1bnUxd056VGRhIiwiY3JlZGl0IjoxMDAsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMTJUMTE6NTQ6MDEuMjk2WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMTJUMTQ6MjU6MTQuNzQ0WiIsIl9fdiI6MCwiaWF0IjoxNjc4NzMyMTA2LCJleHAiOjE2Nzg3MzM5MDZ9.9YT9KhgYW6mdwtuOJEOpl4mpGTZxg4YqTWSuU8tHBzY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/charge/done-sessions",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"charge",
+						"done-sessions"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8000/api/v1",
+			"type": "default"
+		}
+	]
+}
